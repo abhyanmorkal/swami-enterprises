@@ -2803,28 +2803,58 @@ p {
 
 /* Dark results banner section */
 .results-banner-section {
-  background: linear-gradient(135deg, #111111 0%, #1a1a1a 100%);
-  color: rgba(255, 255, 255, 0.85);
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: #ffffff;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 4rem 0;
+}
+
+.results-banner-header {
+  margin-bottom: 2.25rem;
+  max-width: 720px;
+}
+
+.results-banner-title {
+  font-size: clamp(2rem, 3.8vw, 2.75rem);
+  font-weight: 800;
+  color: #ffffff !important;
+  line-height: 1.22;
+  margin: 0.75rem 0 0;
+  letter-spacing: -0.01em;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.75);
+}
+
+.results-banner-title em {
+  color: var(--primary-yellow, #F5B301);
+  font-style: italic;
 }
 
 .results-stats-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
-  margin: 2.5rem 0 2rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  margin: 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .results-stat strong {
   display: block;
   font-family: var(--font-heading);
-  font-size: 2.25rem;
+  font-size: clamp(2.2rem, 3.5vw, 2.85rem);
   font-weight: 800;
-  color: var(--primary-yellow);
+  color: var(--primary-yellow, #F5B301);
   margin-bottom: 0.2rem;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  font-variant-numeric: tabular-nums;
+}
+
+.count-up-val {
+  display: inline-block;
 }
 
 .results-stat span {

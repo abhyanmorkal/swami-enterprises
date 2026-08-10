@@ -6,6 +6,8 @@ import UspIcon from '../components/common/UspIcon'
 import ProjectsBento from '../components/home/ProjectsBento'
 import MobileMockupSlider from '../components/home/MobileMockupSlider'
 import MarketsSection from '../components/home/MarketsSection'
+import CountUp from '../components/common/CountUp'
+import sectionBgImg from '../assets/section-image/section-image.avif'
 import { brand, stats } from '../data/brand'
 import { services } from '../data/services'
 import { testimonials } from '../data/testimonials'
@@ -224,15 +226,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Results Section */}
-      <section className="section section-dark results-banner-section">
+      {/* Results Section with Visible Background & Bright White Title */}
+      <section
+        className="section section-dark results-banner-section"
+        style={{
+          backgroundImage: `linear-gradient(180deg, rgba(15, 15, 15, 0.45) 0%, rgba(10, 10, 10, 0.78) 100%), url(${sectionBgImg})`,
+        }}
+      >
         <div className="container">
-          <SectionIntro
-            label="Proven Performance"
-            title={<>Data-driven marketing for <em>real business outcomes.</em></>}
-            subtitle="Recover lost visibility, accelerate lead flow, and achieve measurable ROI on your marketing investment."
-            align="left"
-          />
+          <div className="results-banner-header">
+            <span className="section-eyebrow-pill">Proven Performance</span>
+            <h2 className="results-banner-title">
+              Data-driven marketing for <em>real business outcomes.</em>
+            </h2>
+          </div>
+
           <div className="results-stats-row">
             {[
               { value: stats.propertiesMarketed, label: 'Properties Marketed' },
@@ -241,13 +249,12 @@ export default function Home() {
               { value: stats.clients, label: 'Active Partnerships' },
             ].map((item) => (
               <div key={item.label} className="results-stat">
-                <strong>{item.value}</strong>
+                <strong>
+                  <CountUp end={item.value} />
+                </strong>
                 <span>{item.label}</span>
               </div>
             ))}
-          </div>
-          <div className="results-cta-wrapper">
-            <Link to="/contact" className="btn btn-primary btn-lg">Start Growing Today</Link>
           </div>
         </div>
       </section>
