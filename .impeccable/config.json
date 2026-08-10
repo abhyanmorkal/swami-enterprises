@@ -1,0 +1,22 @@
+{
+  "hook": {
+    "enabled": true
+  },
+  "detector": {
+    "designSystem": {
+      "enabled": true
+    },
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "Inter",
+        "reason": "Explicit brand body font per DESIGN.md"
+      },
+      {
+        "rule": "overused-font",
+        "value": "Poppins",
+        "reason": "Explicit brand heading font per DESIGN.md"
+      }
+    ]
+  }
+}
