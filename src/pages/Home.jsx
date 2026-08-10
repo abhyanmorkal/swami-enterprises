@@ -247,13 +247,15 @@ export default function Home() {
               { value: stats.leadsGenerated, label: 'Leads Generated' },
               { value: stats.satisfaction, label: 'Client Satisfaction' },
               { value: stats.clients, label: 'Active Partnerships' },
-            ].map((item) => (
-              <div key={item.label} className="results-stat">
-                <strong>
-                  <CountUp end={item.value} />
-                </strong>
-                <span>{item.label}</span>
-              </div>
+            ].map((item, i) => (
+              <AnimateOnScroll key={item.label} delay={i * 80}>
+                <div className="results-stat">
+                  <strong>
+                    <CountUp end={item.value} />
+                  </strong>
+                  <span>{item.label}</span>
+                </div>
+              </AnimateOnScroll>
             ))}
           </div>
         </div>
