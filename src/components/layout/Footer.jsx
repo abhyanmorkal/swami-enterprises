@@ -10,11 +10,13 @@ export default function Footer() {
       <div className="container footer-grid">
         <div className="footer-col">
           <div className="footer-brand">
-            <span className="logo-mark" aria-hidden="true">SE</span>
-            <div>
-              <strong>{brand.name}</strong>
-              <p>{brand.tagline}</p>
-            </div>
+            <Link to="/" aria-label={`${brand.name} — Home`}>
+              <img
+                src="/logo.webp"
+                alt={brand.name}
+                className="brand-logo-img footer-logo-img"
+              />
+            </Link>
           </div>
           <div className="footer-social">
             <a href={brand.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">

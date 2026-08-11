@@ -37,11 +37,11 @@ export default function Header() {
           onClick={closeMenu}
           aria-label={`${brand.name} — Home`}
         >
-          <span className="logo-mark" aria-hidden="true">SE</span>
-          <span className="logo-text">
-            <strong>{brand.name}</strong>
-            <small>{brand.tagline}</small>
-          </span>
+          <img
+            src="/logo.webp"
+            alt={brand.name}
+            className="brand-logo-img"
+          />
         </Link>
 
         <nav
